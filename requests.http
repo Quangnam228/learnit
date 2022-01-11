@@ -1,0 +1,49 @@
+GET http://localhost:5000/auth
+
+###
+POST http://localhost:5000/auth/register
+Content-Type: application/json
+
+{
+    "username": "nam1",
+    "password": "nam1"
+}
+
+###
+POST http://localhost:5000/auth/login
+Content-Type: application/json
+
+{
+    "username": "nam",
+    "password": "nam"
+}
+###
+POST http://localhost:5000/posts
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MWQxODY3ZDYwNzY5NTg5ZDFkMzU0ZjAiLCJpYXQiOjE2NDExNzI1Nzd9.c1ZHJ4IRAHAtnh4KiDMpgLBQF4OStFc36Eprc863wJw
+
+{
+    "title": "my second post",
+    "description": "this is facebook ",
+    "url": "facebook.com",
+    "status": "Learning"
+}
+
+### 
+GET http://localhost:5000/posts
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MWQxODY3ZDYwNzY5NTg5ZDFkMzU0ZjAiLCJpYXQiOjE2NDExOTY3MTF9.78wJSuNgQjIL8a75OqrSOc4nG6EJ5LjsiHtL3ypLFww
+###
+PUT http://localhost:5000/posts/61d24954df50de2d33e7498e
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MWQxODY3ZDYwNzY5NTg5ZDFkMzU0ZjAiLCJpYXQiOjE2NDExNzI1Nzd9.c1ZHJ4IRAHAtnh4KiDMpgLBQF4OStFc36Eprc863wJw
+
+{
+    "title": "my second post update",
+    "description": "this is my facebook ",
+    "url": "facebook.com", 
+    "status": "To learn"
+}
+
+###
+DELETE http://localhost:5000/posts/61d24954df50de2d33e7498e
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MWQxODY3ZDYwNzY5NTg5ZDFkMzU0ZjAiLCJpYXQiOjE2NDExNzI1Nzd9.c1ZHJ4IRAHAtnh4KiDMpgLBQF4OStFc36Eprc863wJw
